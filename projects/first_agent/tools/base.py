@@ -10,7 +10,3 @@ class Tool(ABC):
     @abstractmethod
     def execute(self, **kwargs):
         pass
-
-    @abstractmethod
-    def get_schema(self):
-        pass

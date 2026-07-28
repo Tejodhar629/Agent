@@ -71,21 +71,7 @@ class Agent:
             tool_calls = message_obj.tool_calls
             
             # OpenAI requires appending the assistant's tool_call message first
-            assistant_msg = {
-                "role": "assistant",
-                "content": message_obj.content,
-                "tool_calls": [
-                    {
-                        "id": tc.id,
-                        "type": "function",
-                        "function": {
-                            "name": tc.function.name,
-                            "arguments": tc.function.arguments
-                        }
-                    } for tc in tool_calls
-                ]
-            }
-            self.memory.append(assistant_msg)
+            self.memory.append(message_obj)
             
             for tool_call in tool_calls:
                 func_name = tool_call.function.name

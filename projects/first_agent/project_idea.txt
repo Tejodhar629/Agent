@@ -1,0 +1,6 @@
+Your objective is to design and build a production-ready AI-powered Government Services Platform for India...
+
+[Write your entire project idea, architecture requirements, and modules here]
+
+When you are ready, run `python main.py` and type:
+/load project_idea.txt
