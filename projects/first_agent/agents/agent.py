@@ -49,14 +49,21 @@ class Agent:
             messages.extend(self.memory)
             
             kwargs = {
-                "model": "gemini-3.5-flash",
+                # "model": "gemini-3.1-pro-preview",
+                "model": "gemini-3.1-flash-lite",
+                # "model": "gemini-1.5-pro",
                 "messages": messages
             }
             if self.openai_tools:
                 kwargs["tools"] = self.openai_tools
 
-            response = self.client.chat.completions.create(**kwargs)
-            message_obj = response.choices[0].message
+            try:
+                response = self.client.chat.completions.create(**kwargs)
+                message_obj = response.choices[0].message
+            except Exception as e:
+                error_msg = f"[API Error in agent '{self.name}']: {str(e)}"
+                print(f"\n{error_msg}")
+                return error_msg
             
             # If the model didn't call any tools, we are done
             if not getattr(message_obj, "tool_calls", None):

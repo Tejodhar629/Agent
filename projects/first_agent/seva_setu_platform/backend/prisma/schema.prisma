@@ -1,0 +1,198 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  CITIZEN
+  CONSULTANT
+  EDITOR
+  ADMIN
+}
+
+enum ApplicationStatus {
+  TODO
+  GATHERING_DOCUMENTS
+  APPLIED
+  APPROVED
+  REJECTED
+}
+
+enum ConsultationStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+
+enum SubscriptionTier {
+  FREE
+  GOLD_MONTHLY
+  GOLD_ANNUAL
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+
+enum AuditAction {
+  PII_READ
+  PII_UPDATE
+  PII_DELETE
+}
+
+model User {
+  id               String         @id @default(uuid())
+  mobile           String?        @unique
+  email            String?        @unique
+  role             Role           @default(CITIZEN)
+  subscriptionTier SubscriptionTier @default(FREE)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+
+  // Relations
+  profile       Profile?
+  savedSchemes  SavedScheme[]
+  consultant    Consultant?
+  consultations Consultation[] @relation("CitizenConsultations")
+}
+
+model Profile {
+  id               String   @id @default(uuid())
+  userId           String   @unique
+  age              Int?
+  gender           String?
+  state            String?
+  casteCategory    String?
+  annualIncome     Float?
+  occupation       String?
+  disabilityStatus Boolean? @default(false)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Scheme {
+  id                  String        @id @default(uuid())
+  title               String
+  description         String?
+  ministry            String?
+  category            String?
+  tags                String[]
+  officialLink        String?
+  eligibilityCriteria String?
+  benefits            String?
+  dbtAmount           Float?
+  documentsRequired   String[]
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  savedSchemes        SavedScheme[]
+}
+
+model SavedScheme {
+  id         String            @id @default(uuid())
+  userId     String
+  schemeId   String
+  status     ApplicationStatus @default(TODO)
+  savedAt    DateTime          @default(now())
+  updatedAt  DateTime          @updatedAt
+
+  user       User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  scheme     Scheme            @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  actionPlan ActionPlan?
+}
+
+model ActionPlan {
+  id               String      @id @default(uuid())
+  savedSchemeId    String      @unique
+  steps            String[]
+  rejectionReasons String[]
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+
+  savedScheme      SavedScheme @relation(fields: [savedSchemeId], references: [id], onDelete: Cascade)
+  checklist        ChecklistItem[]
+}
+
+model ChecklistItem {
+  id           String     @id @default(uuid())
+  actionPlanId String
+  name         String
+  isCompleted  Boolean    @default(false)
+
+  actionPlan   ActionPlan @relation(fields: [actionPlanId], references: [id], onDelete: Cascade)
+}
+
+model Consultant {
+  id           String   @id @default(uuid())
+  userId       String   @unique
+  specialties  String[]
+  rating       Float?   @default(0.0)
+  hourlyRate   Float    @default(0.0)
+  isVerified   Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  consultations Consultation[] @relation("ConsultantConsultations")
+}
+
+model Consultation {
+  id           String             @id @default(uuid())
+  citizenId    String
+  consultantId String
+  scheduledAt  DateTime
+  status       ConsultationStatus @default(PENDING)
+  meetingLink  String?
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+
+  citizen      User               @relation("CitizenConsultations", fields: [citizenId], references: [id], onDelete: Cascade)
+  consultant   Consultant         @relation("ConsultantConsultations", fields: [consultantId], references: [id], onDelete: Cascade)
+}
+
+model SecurityAuditLog {
+  id             String      @id @default(uuid())
+  userId         String?
+  action         AuditAction
+  ipAddress      String?
+  userAgent      String?
+  accessedFields String[]
+  details        String?
+  createdAt      DateTime    @default(now())
+}
+
+model Referral {
+  id            String   @id @default(uuid())
+  referrerId    String
+  refereeId     String   @unique
+  status        String   @default("PENDING")
+  pointsAwarded Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model ConsultancyBooking {
+  id          String        @id @default(uuid())
+  userId      String
+  expertId    String
+  bookingDate DateTime
+  status      BookingStatus @default(PENDING)
+  amountPaid  Float
+  meetingLink String?
+  paymentId   String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+}

@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+seva_setu_platform/frontend/node_modules/
+seva_setu_platform/backend/node_modules/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Environment Variables
+.env
+.env.local
+
+# Databases
+company.db
+*.sqlite3
+
+# IDE / OS Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

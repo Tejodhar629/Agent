@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-navy: #0F2C59;
+  --accent-saffron: #E07A5F;
+  --success-green: #1F4E3D;
+  --bg-cream: #FAFAF5;
+  --text-coal: #1C1C1C;
+  --accessible-blue: #1D4ED8;
+}
+
+body {
+  background-color: #FAFAF5;
+  color: #1C1C1C;
+  font-family: 'Inter', 'Poppins', 'Noto Sans Devanagari', -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar configurations for beautiful e-governance UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAFAF5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0F2C59/20;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0F2C59/40;
+}

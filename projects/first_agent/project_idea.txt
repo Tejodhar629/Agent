@@ -4,3 +4,939 @@ Your objective is to design and build a production-ready AI-powered Government S
 
 When you are ready, run `python main.py` and type:
 /load project_idea.txt
+
+Act as a team of world-class software architects, AI engineers, prompt engineers, business analysts, UX designers, cybersecurity experts, DevOps engineers, SEO specialists, cloud architects, and senior full-stack developers with 20+ years of experience building enterprise-scale SaaS and AI platforms.
+
+Your objective is to design and build a production-ready AI-powered Government Services Platform for India that helps citizens discover, understand, and apply for government schemes, registrations, certificates, tax services, and business services through an intelligent conversational AI assistant.
+
+Project Goal:
+Create a scalable, secure, multilingual, SEO-optimized platform where users simply describe their needs in natural language, and the AI guides them through personalized recommendations.
+
+Core User Flow:
+1. User enters the website.
+2. AI asks contextual questions such as age, income, state, occupation, education, family details, business status, category, disability, etc.
+3. AI determines eligibility using rule-based logic and LLM reasoning.
+4. AI generates:
+   - Eligible government schemes
+   - Required documents
+   - Eligibility explanation
+   - Benefits
+   - Official government (.gov.in) links only
+   - Step-by-step application guide
+   - FAQs
+   - Common rejection reasons
+   - Tips to improve application success
+5. Users can save results, download reports, and track applications.
+
+Requirements:
+- Follow Clean Architecture, Domain-Driven Design (DDD), SOLID principles, DRY, KISS, and scalable modular architecture.
+- Build with Next.js, TypeScript, Tailwind CSS, Shadcn UI, NestJS, PostgreSQL, Prisma, Redis, Docker, and OpenAI APIs.
+- Use RAG with a vector database (Qdrant or Pinecone) for accurate retrieval from government schemes, circulars, and official documentation.
+- Implement secure authentication (Google OAuth, OTP, JWT, RBAC, 2FA).
+- Include multilingual support (English, Hindi, and major Indian regional languages).
+- Build responsive web and Progressive Web App (PWA) support.
+- Design an accessible UI (WCAG 2.2 AA).
+- Ensure enterprise-grade security (OWASP Top 10, encryption, rate limiting, CSRF/XSS/SQL injection protection, audit logs, secrets management).
+- Optimize for Core Web Vitals, SEO, structured data, lazy loading, CDN caching, and image optimization.
+
+Modules:
+- AI Chat Assistant
+- Government Scheme Finder
+- Business Registration Assistant
+- GST Assistant
+- Income Tax Assistant
+- Passport Assistant
+- PAN Assistant
+- MSME & Startup Assistant
+- Scholarship Finder
+- Pension & Welfare Finder
+- User Dashboard
+- Admin Dashboard
+- CMS
+- Blog with AI-generated SEO content
+- Notifications
+- Analytics
+- Referral System
+- Premium Membership
+- Consultancy Booking
+- Affiliate Marketplace
+
+Deliverables (in order):
+1. Business Requirement Document (BRD)
+2. Product Requirement Document (PRD)
+3. User Personas
+4. Functional Requirements
+5. Non-functional Requirements
+6. User Stories
+7. Acceptance Criteria
+8. Information Architecture
+9. Database Schema (ERD)
+10. API Specifications (REST and GraphQL)
+11. AI Agent Architecture
+12. Prompt Engineering Strategy
+13. RAG Pipeline Design
+14. Folder Structure
+15. Component Library
+16. UI/UX Design System
+17. Security Architecture
+18. DevOps Architecture (Docker, CI/CD, Monitoring)
+19. Testing Strategy (Unit, Integration, E2E, Performance, Security)
+20. SEO Strategy
+21. Analytics & Logging Strategy
+22. Monetization Strategy
+23. Phased Development Roadmap (MVP → Enterprise)
+24. Generate production-ready, modular, well-documented code for each module one at a time.
+25. Before writing code for any module, explain the architecture, dependencies, and implementation plan.
+26. Never use placeholder code if a production-ready implementation is feasible.
+27. Ensure every feature is scalable, reusable, maintainable, and fully documented.
+
+Act as a technical lead throughout the project, proactively identifying risks, suggesting improvements, and enforcing best practices before proceeding to the next phase.
+
+Complete Website Pages
+Public Pages
+Home
+
+Hero AI Search
+
+Popular Services
+
+Popular Schemes
+
+AI Chat
+
+Categories
+
+Latest Government News
+
+Blogs
+
+Testimonials
+
+FAQs
+
+Footer
+
+About
+
+Mission
+
+Vision
+
+Features
+
+Our Team
+
+Technology
+
+Contact
+
+Services
+
+Government Schemes
+
+Business Services
+
+Tax Services
+
+Identity Services
+
+Banking Services
+
+Loans
+
+Certificates
+
+Registrations
+
+Passport
+
+PAN
+
+GST
+
+MSME
+
+Scholarships
+
+Insurance
+
+AI Government Assistant
+
+Full AI Chat
+
+Voice Chat
+
+History
+
+Export PDF
+
+Save
+
+Share
+
+Government Schemes
+
+Central Schemes
+
+State Schemes
+
+Women
+
+Students
+
+Farmers
+
+Business
+
+Senior Citizens
+
+Disabled
+
+Minority
+
+SC/ST/OBC
+
+Search Filters
+
+Scheme Details
+
+Eligibility
+
+Benefits
+
+Documents
+
+Process
+
+Official Website
+
+FAQs
+
+Download PDF
+
+Bookmark
+
+Blogs
+
+Categories
+
+Search
+
+Trending
+
+Latest
+
+Blog Details
+
+SEO
+
+Related Posts
+
+Comments
+
+Sharing
+
+Government News
+
+Latest News
+
+Notifications
+
+Circulars
+
+Press Releases
+
+Downloads
+
+Government Forms
+
+PDF
+
+Notifications
+
+Circulars
+
+Templates
+
+FAQs
+
+Categories
+
+Search
+
+Contact
+
+Contact Form
+
+Google Map
+
+Support
+
+Privacy Policy
+Terms
+Refund Policy
+Cookie Policy
+Careers
+Sitemap
+404
+Maintenance
+Authentication Pages
+
+Login
+
+Signup
+
+Forgot Password
+
+Reset Password
+
+Verify OTP
+
+Email Verification
+
+2FA
+
+Google Login
+
+Profile Setup
+
+User Dashboard
+
+Dashboard
+
+AI Chat History
+
+Saved Schemes
+
+Saved Blogs
+
+Saved Documents
+
+Notifications
+
+Application Tracker
+
+Bookmarks
+
+Premium
+
+Invoices
+
+Payments
+
+Consultation Booking
+
+Profile
+
+Security
+
+Devices
+
+Activity Log
+
+Referral
+
+Support Tickets
+
+Settings
+
+Logout
+
+AI Chat Pages
+
+New Chat
+
+History
+
+Saved Conversations
+
+Export
+
+Share
+
+Feedback
+
+Voice Mode
+
+Multilingual
+
+Business Pages
+
+MSME Registration
+
+GST
+
+PAN
+
+Passport
+
+Income Tax
+
+Startup India
+
+Mudra Loan
+
+PMAY
+
+Ayushman
+
+PMEGP
+
+Company Registration
+
+Trademark
+
+FSSAI
+
+Import Export Code
+
+Shop License
+
+Each service has
+
+Overview
+
+Eligibility
+
+Benefits
+
+Documents
+
+Step-by-Step Guide
+
+Official Links
+
+FAQs
+
+Downloads
+
+Premium Pages
+
+Pricing
+
+Compare Plans
+
+Checkout
+
+Payment Success
+
+Payment Failed
+
+Invoices
+
+Membership
+
+Consultation
+
+Book Consultation
+
+Calendar
+
+Payment
+
+Meeting
+
+Documents
+
+Chat
+
+History
+
+Admin Panel
+Authentication
+
+Admin Login
+
+OTP Login
+
+2FA
+
+Forgot Password
+
+Role Permission
+
+Activity Logs
+
+Dashboard
+
+Overview
+
+Revenue
+
+Visitors
+
+New Users
+
+AI Usage
+
+Schemes
+
+Blogs
+
+Support
+
+Performance
+
+Charts
+
+User Management
+
+Users
+
+Roles
+
+Permissions
+
+Premium Users
+
+Blocked Users
+
+Verification
+
+Documents
+
+Activity
+
+Government Schemes
+
+Add Scheme
+
+Edit Scheme
+
+Delete Scheme
+
+Category
+
+Eligibility Rules
+
+Documents
+
+Benefits
+
+Official Links
+
+State Mapping
+
+Version History
+
+Publish
+
+Draft
+
+Archive
+
+AI Knowledge Base
+
+Government PDFs
+
+Government Notifications
+
+Circulars
+
+Acts
+
+Policies
+
+Rules
+
+Upload
+
+OCR
+
+Embeddings
+
+Vector Database Sync
+
+AI Prompt Templates
+
+AI Prompt Management
+
+System Prompt
+
+Eligibility Prompt
+
+Document Prompt
+
+Chat Prompt
+
+Translation Prompt
+
+Summary Prompt
+
+Safety Prompt
+
+Version Control
+
+Testing
+
+Blog CMS
+
+Categories
+
+Posts
+
+Authors
+
+Draft
+
+Schedule
+
+SEO
+
+AI Generate
+
+Images
+
+Tags
+
+Comments
+
+News CMS
+
+Latest News
+
+Notifications
+
+Circulars
+
+Government Updates
+
+Schedule
+
+Service Pages
+
+Create
+
+Edit
+
+Delete
+
+SEO
+
+FAQ
+
+Internal Links
+
+Documents
+
+Upload
+
+Categories
+
+Preview
+
+OCR
+
+Download
+
+Delete
+
+Media Library
+
+Images
+
+Videos
+
+PDF
+
+Icons
+
+Compression
+
+Alt Tags
+
+Folders
+
+SEO
+
+Meta Tags
+
+Robots
+
+Sitemap
+
+Schema
+
+Open Graph
+
+Canonical URLs
+
+Redirects
+
+Broken Links
+
+Indexing
+
+Analytics
+
+Visitors
+
+Page Views
+
+Bounce Rate
+
+AI Queries
+
+Popular Schemes
+
+Revenue
+
+Conversions
+
+Countries
+
+States
+
+Cities
+
+Search Keywords
+
+Payments
+
+Transactions
+
+Refunds
+
+Invoices
+
+Subscriptions
+
+Coupons
+
+Taxes
+
+Gateway Logs
+
+Membership
+
+Plans
+
+Benefits
+
+Pricing
+
+Coupons
+
+Free Trial
+
+Renewal
+
+Affiliate
+
+Partners
+
+Commissions
+
+Clicks
+
+Conversions
+
+Payouts
+
+Advertisement
+
+Banners
+
+Native Ads
+
+Google Ads
+
+Sponsors
+
+Scheduling
+
+Analytics
+
+Consultation
+
+Bookings
+
+Calendar
+
+Experts
+
+Payments
+
+Reports
+
+Reviews
+
+Notification
+
+Email
+
+SMS
+
+Push
+
+WhatsApp
+
+Templates
+
+Campaigns
+
+Automation
+
+Support
+
+Tickets
+
+Live Chat
+
+FAQs
+
+Knowledge Base
+
+Feedback
+
+Settings
+
+Website Settings
+
+Branding
+
+Theme
+
+Language
+
+Currency
+
+Email
+
+SMS
+
+AI Keys
+
+Payment Keys
+
+Social Media
+
+Contact
+
+Legal Pages
+
+Maintenance Mode
+
+Backups
+
+Security
+
+Roles
+
+Permissions
+
+Audit Logs
+
+Login History
+
+API Keys
+
+IP Whitelist
+
+Rate Limits
+
+Sessions
+
+Encryption
+
+API Management
+
+REST APIs
+
+GraphQL APIs
+
+API Keys
+
+Webhooks
+
+Usage Logs
+
+Rate Limits
+
+Database
+
+Backup
+
+Restore
+
+Migration
+
+Logs
+
+Health
+
+DevOps
+
+Build
+
+Deployment
+
+Docker
+
+CI/CD
+
+Queue
+
+Cron Jobs
+
+Monitoring
+
+Error Logs
+
+Reports
+
+Revenue
+
+Users
+
+Schemes
+
+Blogs
+
+AI Usage
+
+Downloads
+
+Consultation
+
+Affiliate
+
+Advertisements
+
+Required Database Modules
+Users
+Roles
+Permissions
+Government Schemes
+States
+Districts
+Cities
+Categories
+Services
+Documents
+Eligibility Rules
+AI Conversations
+Blogs
+Blog Categories
+Comments
+FAQs
+Notifications
+Payments
+Memberships
+Referrals
+Coupons
+Advertisements
+Support Tickets
+Audit Logs
+Activity Logs
+Settings
+SEO
+Media
+AI Prompt Templates
+Knowledge Base
+OCR Documents
+Embeddings
+Vector Index Metadata
+API Keys
+Analytics
+Reports
